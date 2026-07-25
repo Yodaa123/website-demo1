@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Story | Tuesday Co.</title>
+  <link rel="stylesheet" href="tuesdaystyles.css">
+</head>
+<body>
+  <header>
+    <a class="logo" href="tuesdaysite.html">tuesday co.</a>
+    <nav>
+      <a href="tuesdaysite.html">Home</a>
+      <a href="mystory.html">My Story</a>
+      <a href="faq.html">FAQ</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="tuesdaysite.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="story">
+    <section class="story-header">
+      <h1>My <span>story</span></h1>
+      <p>A little about the person behind tuesday co, Robert tuesday.</p>
+    </section>
+
+    <div class="story-image-space">
+      <img src="images/roberttuesday.jpg" alt="Robert Tuesday">
+    </div>
+
+    <section class="story-section">
+      <button class="story-question" type="button">Where it started</button>
+      <div class="story-answer"><p>It all started for me when I was a little kid, I used to make little short films on my old PS3. It went from that to making videos with a laptop and Windows Movie Maker. After a while, I was put into a video editing class in high school, and I fell in love with it.</p></div>
+    </section>
+    <section class="story-section">
+      <button class="story-question" type="button">What I do</button>
+      <div class="story-answer"><p>I can do video editing, lighting, graphic design, and a little web development. Whether you want someone's help to edit your video, someone to shoot an amazing music video for you, or something else, I’m here to help!</p></div>
+    </section>
+    <section class="story-section">
+      <button class="story-question" type="button">Why tuesday co.</button>
+      <div class="story-answer"><p>I started tuesday co. because I want to help like-minded individuals and businesses bring their ideas to life in whatever way I can. I mostly do all this for the love of the craft, and I’m passionate about creating meaningful work, not just making a profit.</p></div>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll('.story-question').forEach((question) => {
+      question.addEventListener('click', () => {
+        const section = question.parentElement;
+        const answer = section.querySelector('.story-answer');
+        const isOpen = section.classList.toggle('open');
+        answer.style.maxHeight = isOpen ? answer.scrollHeight + 'px' : '0';
+      });
+    });
+  </script>
+
+  <footer>
+    <h2>tuesday co.</h2>
+    <div class="contact-info">
+      <p>roberttuesdaybusiness@gmail.com</p>
+      <p>850-867-8375</p>
+    </div>
+    <hr>
+    <p>© 2025 tuesday co. All rights reserved.</p>
+  </footer>
+</body>
+</html>

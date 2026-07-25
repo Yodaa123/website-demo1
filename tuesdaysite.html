@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tuesday Co.</title>
+  <link rel="stylesheet" href="tuesdaystyles.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">tuesday co.</div>
+
+  <nav>
+    <a href="mystory.html">My Story</a>
+    <a href="faq.html">FAQ</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="services.html">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+
+<!-- HERO SECTION -->
+<section class="hero">
+
+  <div class="hero-text">
+
+    <h1>
+      Here at tuesday co.<br>
+      We provide quality<br>
+      <span>multi-media<br>
+      services</span><br>
+      for you.
+    </h1>
+
+    <p>
+      From shooting video, precise professional editing, <br>all the way to
+      vibrant color grading,
+      We can help bring your vision to life.
+    </p>
+
+    <a href="#contact">
+      <button>
+        Reach out now!
+      </button>
+    </a>
+  </div>
+
+
+  <div class="hero-images">
+
+    <img
+            src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80"
+            alt="Film camera in a movie theater">
+
+    <img
+            src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80"
+            alt="Video editor working at a computer">
+
+    <p class="image-credit">Images from <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></p>
+
+  </div>
+
+</section>
+
+
+
+<div class="story-button-wrap">
+  <a href="mystory.html"><button type="button">My Story</button></a>
+  <p>Click here if you want to know more about me!</p>
+</div>
+
+<!-- CONTACT SECTION -->
+
+<section class="contact" id="contact">
+
+  <h2>Contact Us</h2>
+
+  <form id="contact-form" action="https://formsubmit.co/roberttuesdaybusiness@gmail.com" method="POST">
+
+    <input type="hidden" name="_subject" value="New Tuesday Co. contact form message">
+    <input type="hidden" name="_captcha" value="false">
+
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" placeholder="Your name" required>
+
+
+    <label for="email">Email</label>
+    <input id="email" name="_replyto" type="email" placeholder="you@example.com" required>
+
+
+    <label for="message">What do you need help with?</label>
+    <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+
+
+    <button id="send-message-button" type="submit">
+      Send Message
+    </button>
+
+
+  </form>
+
+</section>
+
+<script>
+  const contactForm = document.getElementById('contact-form');
+  const sendMessageButton = document.getElementById('send-message-button');
+
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    sendMessageButton.disabled = true;
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { Accept: 'application/json' }
+      });
+
+      if (!response.ok) throw new Error('Message could not be sent.');
+
+      sendMessageButton.textContent = 'Message Sent!';
+      contactForm.reset();
+
+      setTimeout(() => {
+        sendMessageButton.textContent = 'Send Message';
+        sendMessageButton.disabled = false;
+      }, 1000);
+    } catch (error) {
+      sendMessageButton.disabled = false;
+      alert('Your message could not be sent. Please try again.');
+    }
+  });
+</script>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <h2>tuesday co.</h2>
+
+  <div class="contact-info">
+
+    <p>roberttuesdaybusiness@gmail.com</p>
+    <p>850-867-8375</p>
+
+  </div>
+
+
+  <hr>
+
+  <p>
+    © 2025 tuesday co. All rights reserved.
+  </p>
+
+
+</footer>
+</html>

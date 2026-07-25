@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ | Tuesday Co.</title>
+  <link rel="stylesheet" href="tuesdaystyles.css">
+</head>
+<body>
+  <header>
+    <a class="logo" href="tuesdaysite.html">tuesday co.</a>
+    <nav>
+      <a href="tuesdaysite.html">Home</a>
+      <a href="mystory.html">My Story</a>
+      <a href="faq.html">FAQ</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="tuesdaysite.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="services">
+    <section class="services-hero">
+      <h1>Frequently Asked <span>Questions</span></h1>
+    </section>
+
+    <section class="faq-list">
+      <article class="faq-item">
+        <button class="faq-question" type="button">What services do you offer?</button>
+        <div class="faq-answer"><p>We offer video production, video editing, lighting, and multimedia services.</p></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-question" type="button">What types of projects do you work on?</button>
+        <div class="faq-answer"><p>We work on commercials, interviews, social media content, music videos, events, and more.</p></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-question" type="button">How much do your services cost?</button>
+        <div class="faq-answer"><p>Pricing depends on the project’s length, scope, location, and production needs. Contact us for a custom quote.</p></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-question" type="button">How long does a project take?</button>
+        <div class="faq-answer"><p>Timelines vary depending on the project, but we’ll provide an estimated schedule before work begins.</p></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-question" type="button">Do you travel for projects?</button>
+        <div class="faq-answer"><p>Yes, travel may be available depending on the location and project requirements.</p></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-question" type="button">Can you work with footage I already recorded?</button>
+        <div class="faq-answer"><p>Of course, just as long as you send me all footage required!</p></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-question" type="button">How do I get a quote?</button>
+        <div class="faq-answer"><p>Use the Contact button and tell us about your project, goals, and preferred timeline.</p></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-question" type="button">What file formats do you deliver?</button>
+        <div class="faq-answer"><p>I can provide whatever file format you need for your website, social media, presentation, or other platform.</p></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-question" type="button">Do you offer revisions?</button>
+        <div class="faq-answer"><p>Yes, revision options can be discussed when planning your project.</p></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-question" type="button">How can I see examples of your work?</button>
+        <div class="faq-answer"><p>Visit our Portfolio page to view selected projects.</p></div>
+      </article>
+    </section>
+  </main>
+  <script>
+    document.querySelectorAll('.faq-question').forEach((question) => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        const answer = item.querySelector('.faq-answer');
+        const isOpen = item.classList.toggle('open');
+        answer.style.maxHeight = isOpen ? answer.scrollHeight + 'px' : '0';
+      });
+    });
+  </script>
+</body>
+</html>
