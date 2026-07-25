@@ -342,9 +342,16 @@ footer hr{
 .services-hero p{color:#bdbdbd;line-height:1.6}
 .service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
 .service-card{background:#111;border:1px solid #292929;padding:32px}
+.service-card{animation:serviceFadeUp .7s ease-out both}
 .service-card h2{color:#d00000;font-size:24px;margin-bottom:14px}
 .service-card p{color:#bdbdbd;line-height:1.6}
 .lighting-card{grid-column:1 / -1;width:calc(50% - 14px);justify-self:center}
+.services-table{width:100%;margin-top:42px;border-collapse:collapse;background:#111;color:#bdbdbd}
+.services-table caption{color:white;font-size:24px;font-weight:600;margin-bottom:14px}
+.services-table th,.services-table td{padding:15px;border:1px solid #333;text-align:left}
+.services-table th{background:#d00000;color:white}
+.services-table tr:nth-child(even){background:#181818}
+@keyframes serviceFadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .services-note{text-align:center;color:#bdbdbd;margin-top:42px;font-size:18px}
 .reach-link{display:inline-block;background:#d00000;color:white;padding:5px 10px;text-decoration:none;font-weight:600}
 .reach-link:hover{background:#a00000}
